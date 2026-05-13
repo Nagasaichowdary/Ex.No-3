@@ -1,3 +1,5 @@
+# NAME : POPURI ADITYA NAGA SAI
+# Reg No : 212223110036
 # Ex.No:3
    RECOGNITION-OF-A-VALID-ARITHMETIC-EXPRESSION-THAT-USES-OPERATOR-AND-USING-YACC
 ## Register Number:
@@ -14,6 +16,49 @@ To write a yacc program to recognize a valid arithmetic expression that uses ope
 7.	Compile these with the C compiler as gcc lex.yy.c y.tab.c
 8.	Enter an arithmetic expression as input and the tokens are identified as output.
 ## PROGRAM
+```
+%{
+#include <stdio.h>
+#include <stdlib.h>
+
+int yylex(void);
+void yyerror(const char *s);
+%}
+
+%token NUMBER ID
+
+%left '+' '-'
+%left '*' '/'
+
+%%
+input:
+    | input expr '\n'   { printf("Valid expression\n"); }
+    ;
+
+expr:
+      expr '+' expr
+    | expr '-' expr
+    | expr '*' expr
+    | expr '/' expr
+    | '(' expr ')'
+    | NUMBER
+    | ID
+    ;
+%%
+
+void yyerror(const char *s) {
+    fprintf(stderr, "Error: %s\n", s);
+}
+
+int main() {
+    printf("Enter an arithmetic expression:\n");
+    yyparse();
+    return 0;
+}
+
+```
 ## OUTPUT
+<img width="1151" height="383" alt="Screenshot 2026-05-13 103837" src="https://github.com/user-attachments/assets/34a2a6bd-9d9e-4ea7-a34b-fcf44bc21f2f" />
+
 ## RESULT
 A YACC program to recognize a valid arithmetic expression that uses operator +,-,* and / is executed successfully and the output is verified.
