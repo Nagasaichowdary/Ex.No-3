@@ -1,9 +1,8 @@
 # NAME : POPURI ADITYA NAGA SAI
 # Reg No : 212223110036
+## Date: 13/05/2026
 # Ex.No:3
    RECOGNITION-OF-A-VALID-ARITHMETIC-EXPRESSION-THAT-USES-OPERATOR-AND-USING-YACC
-## Register Number:
-## Date:
 ## AIM
 To write a yacc program to recognize a valid arithmetic expression that uses operator +,- ,* and /.
 ## ALGORITHM
